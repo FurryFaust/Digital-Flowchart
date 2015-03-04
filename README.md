@@ -1,6 +1,7 @@
 # Digital-Flowchart
 Generate digital flowcharts from binary sequences and can compare them using binary algebra.
 
+Live Demo: http://furryfaust.com/digital-flowchart/
 
 Basic Chart Generating Usage
 ----------------------------

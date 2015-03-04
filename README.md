@@ -8,6 +8,7 @@ Enter your binary sequence and the name. Here we enter 'A' as the name and '1010
 
 If you want more charts, hit the '+' button and enter the same format and then hit 'update'. This can be done up to
 four times.
+
 ![alt tag](http://furryfaust.com/images/multichart.png)
 
 Later we can compare these two charts using boolean algebra.

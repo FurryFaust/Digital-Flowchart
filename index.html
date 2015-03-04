@@ -19,16 +19,15 @@
 		</form>
 		<p>--------------------------</p>
 		<canvas id="canvas"> </canvas>
-		<p>--------------------------</p>
 		<div class="containerb"> 
 			<form>
 				<input id="expression" type="text" /> <br> <br>
 				<input id="perform" type="submit" value="Perform" />
+				<button id="help"> ? </button>
 			</form>
 			<p>--------------------------</p>
 			<p id="answer"> </p>
 			<canvas id="answerchart"> </canvas>
-			<p>--------------------------</p>
 		</div>
 	</body>
 
@@ -93,6 +92,11 @@
 					$("#generate").val("Update");
 				}
 			}
+			event.preventDefault();
+		});
+
+		$("#help").click(function(event) {
+			window.open("https://github.com/FurryFaust/Digital-Flowchart");
 			event.preventDefault();
 		});
 

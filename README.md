@@ -5,7 +5,6 @@ Generate digital flowcharts from binary sequences and can compare them using bin
 Basic Chart Generating Usage
 ----------------------------
 Enter your binary sequence and the name. Here we enter 'A' as the name and '10101001111' as the sequence.
-![alt tag](http://furryfaust.com/images/basicchart.png)
 
 If you want more charts, hit the '+' button and enter the same format and then hit 'update'. This can be done up to
 four times.

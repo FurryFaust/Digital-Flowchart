@@ -32,4 +32,8 @@ A' (NOT/Inverter Gate)
 (A + B)' (NOR Gate)
 ![alt tag](http://furryfaust.com/images/norgate.png)
 
-XOR and XNOR gates have not been added in yet.
+A ^ B (XOR GATE)
+![alt tag](http://furryfaust.com/images/xorgate.png)
+
+(A ^ B)' (XNOR GATE)
+![alt tag](http://furryfaust.com/images/xnorgate.png)

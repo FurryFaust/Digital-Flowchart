@@ -1,0 +1,10 @@
+p[id=credits] {
+	position: fixed;
+	font-family: 'Slabo 27px', serif;
+}
+
+div.containerb {
+	position: fixed;
+    left: 600;
+    top: 8;
+}

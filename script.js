@@ -124,18 +124,6 @@ $(document).ready(function() {
                     else if(proccessing.indexOf("01") != -1) {
                         proccessing = proccessing.replace("01", "0");
                     }
-                    else if(proccessing.indexOf("1+1") != -1) {
-                        proccessing = proccessing.replace("1+1", "1");
-                    }
-                    else if(proccessing.indexOf("1+0") != -1) {
-                        proccessing = proccessing.replace("1+0", "1");
-                    }
-                    else if(proccessing.indexOf("0+0") != -1) {
-                        proccessing = proccessing.replace("0+0", "0");
-                    }
-                    else if(proccessing.indexOf("0+1") != -1) {
-                        proccessing = proccessing.replace("0+1", "1");
-                    }
                     else if(proccessing.indexOf("1^1") != -1) {
                         proccessing = proccessing.replace("1^1", "0");
                     }
@@ -147,6 +135,18 @@ $(document).ready(function() {
                     }
                     else if(proccessing.indexOf("0^0") != -1) {
                         proccessing = proccessing.replace("0^0", "0");
+                    }
+                    else if(proccessing.indexOf("1+1") != -1) {
+                        proccessing = proccessing.replace("1+1", "1");
+                    }
+                    else if(proccessing.indexOf("1+0") != -1) {
+                        proccessing = proccessing.replace("1+0", "1");
+                    }
+                    else if(proccessing.indexOf("0+0") != -1) {
+                        proccessing = proccessing.replace("0+0", "0");
+                    }
+                    else if(proccessing.indexOf("0+1") != -1) {
+                        proccessing = proccessing.replace("0+1", "1");
                     }
                 }
                 answer += proccessing;

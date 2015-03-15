@@ -61,9 +61,9 @@ $(document).ready(function() {
     $("#add").click(function(event) {
         if(inputs + 1 < 5) {
             $("#inputs").append("<br>");
-            $("#inputs").append("<input id='name" + inputs + "' type='text' maxlength='1' name='id'/>");
+            $("#inputs").append("<input id='name" + inputs + "' type='text' maxlength='1' name='id' placeholder='id'/>");
             $("#inputs").append("   ");
-            $("#inputs").append("<input id='input" + inputs + "' type='text' maxlength ='16' name='sequence'/>");
+            $("#inputs").append("<input id='input" + inputs + "' type='text' maxlength ='16' name='sequence' placeholder='sequence'/> ");
             inputs++;
         }
         $(".containerb").css("margin-top", -586 - ((inputs -1) * 33));

@@ -1,3 +1,8 @@
+body {
+	margin: 10;
+}
+
+
 div.containerb {
 	position: absolute;
     margin-left: 600;

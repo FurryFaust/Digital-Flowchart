@@ -1,5 +1,5 @@
 # Digital-Flowchart
-Generate digital flowcharts from binary sequences and can compare them using boolean algebra.
+Generate digital flowcharts from binary sequences and can compare them using boolean algebra. This tool is written alongside the Sematics-UI and jQuery library.
 
 Live Demo: http://furryfaust.com/digital-flowchart/
 

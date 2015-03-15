@@ -168,13 +168,13 @@ $(document).ready(function() {
     function generateBinaryChart(j) {
         var sequence = String(sequences[Object.keys(sequences)[j]]);
         for(var i = 0; i != sequence.length; i ++) {
-            binaryDraw.drawImage(getTextureFor(sequence, i), 1 + (i * 32), j * 48);
+            binaryDraw.drawImage(getTextureFor(sequence, i), 1 + (i * 32), 50 +  j * 48);
         }       
     }
 
     function generateExpressionChart(expression) {
         for(var i = 0; i != expression.length; i ++) {
-            binaryDraw.drawImage(getTextureFor(expression, i), 544 + (i * 32), 0);
+            binaryDraw.drawImage(getTextureFor(expression, i), 544 + (i * 32), 50);
         }
     }
 

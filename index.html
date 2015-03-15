@@ -1,9 +1,29 @@
 <html>
     <head>
         <title> Flowchart Util </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <link href="semantic.min.css" rel="stylesheet" type="text/css" >
         <link href="main.css" rel="stylesheet" type="text/css" >
     </head>
+
+    <noscript>
+        <div class="ui negative message">
+            <i class="close icon"></i>
+            <div class="header">
+                Missing Javascript!
+            </div>
+            <p>Please enable javascript on your browser or get a better browser!</p>
+        </div>
+        <br>
+        <div class="ui divider"></div>
+        <br>
+    </noscript>
+
+    <script>
+        if(!jQuery) {
+            document.write("<div class='ui negative message'><i class='close icon'></i><div class='header'>Missing jQuery!</div><p>Please get a better browser that jQuery supports!</p></div><br><div class='ui divider'></div><br>");
+        }
+    </script>
 
     <body>
         <form>
@@ -35,6 +55,5 @@
         </div>
     </body>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="script.js"></script>
 </html>

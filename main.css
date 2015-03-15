@@ -1,9 +1,13 @@
-p[id=credits] {
-	font-family: 'Slabo 27px', serif;
+div.containerb {
+	position: absolute;
+    margin-left: 600;
+    margin-top: -586;
 }
 
-div.containerb {
-	position: fixed;
-    left: 600;
-    top: 8;
+.ui.input input[name=id] {
+	width: 15%;
+}
+
+.ui.input input[name=sequence] {
+	width: 50%;
 }

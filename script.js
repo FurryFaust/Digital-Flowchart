@@ -7,12 +7,7 @@ $(document).ready(function() {
     var binaryChart = document.getElementById("canvas");
     var binaryDraw = binaryChart.getContext("2d");
     binaryChart.width = 1000;
-    binaryChart.height = 500;
-
-    var expressionChart = document.getElementById("answerchart");
-    var expressionDraw = expressionChart.getContext("2d"); 
-    expressionChart.width = 1000;
-    expressionChart.height = 500;
+    binaryChart.height = 470;
 
     // Textures prepared to draw onto canvas
     var low = new Image();
@@ -26,10 +21,9 @@ $(document).ready(function() {
     var highsingle = new Image();
     highsingle.src = "res/highsingle.png";
 
-    high.addEventListener("load", function(event) {
+    highsingle.addEventListener("load", function(event) {
         setInterval(function() {
             binaryDraw.clearRect(0, 0, binaryChart.width, binaryChart.height);
-            expressionDraw.clearRect(0, 0, expressionChart.width, expressionChart.height);
             var expression = $("#answer").text();
             if(expression != "" && binaryReg.test(expression) == true) {
                 generateExpressionChart(expression);
@@ -66,12 +60,13 @@ $(document).ready(function() {
 
     $("#add").click(function(event) {
         if(inputs + 1 < 5) {
-            $(".containera").append("<input id='name" + inputs + "' type='text' maxlength='1' size='1'/>");
-            $(".containera").append("   ");
-            $(".containera").append("<input id='input" + inputs + "' type='text' maxlength ='16' size='16'/>");
-            $(".containera").append("<br>");
+            $("#inputs").append("<br>");
+            $("#inputs").append("<input id='name" + inputs + "' type='text' maxlength='1' name='id'/>");
+            $("#inputs").append("   ");
+            $("#inputs").append("<input id='input" + inputs + "' type='text' maxlength ='16' name='sequence'/>");
             inputs++;
         }
+        $(".containerb").css("margin-top", -586 - ((inputs -1) * 33));
         event.preventDefault();
     });
 
@@ -179,7 +174,7 @@ $(document).ready(function() {
 
     function generateExpressionChart(expression) {
         for(var i = 0; i != expression.length; i ++) {
-            expressionDraw.drawImage(getTextureFor(expression, i), 1 + (i * 32), 0);
+            binaryDraw.drawImage(getTextureFor(expression, i), 544 + (i * 32), 0);
         }
     }
 

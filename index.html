@@ -1,34 +1,39 @@
 <html>
     <head>
         <title> Flowchart Util </title>
-        <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+        <link href="semantic.min.css" rel="stylesheet" type="text/css" >
         <link href="main.css" rel="stylesheet" type="text/css" >
     </head>
 
     <body>
         <form>
-            <input id="name0" type="text" maxlength="1" size="1"/>
-            <input id="input0" type="text" maxlength ="16" size="16"/>
+            <div id="inputs" class="ui small input">
+            <input id="name0" type="text" maxlength="1" name="id"/>
+            <input id="input0" type="text" maxlength ="16" name="sequence"/>
+            </div>
             <div class="containera"> </div>
             <br>
-            <button id="add"> + </button>
-            <input id="generate" type="submit" value="Generate"/>
+            <button class="ui button" id="add"> + </button>
+            <input class="ui button" id="generate" type="submit" value="Generate"/>
         </form>
-        <p>--------------------------</p>
+        <div class="ui divider"></div>
         <canvas id="canvas"> </canvas>
         <div class="containerb"> 
             <form>
-                <input id="expression" type="text" /> <br> <br>
-                <input id="perform" type="submit" value="Perform" />
-                <button id="help"> ? </button>
+                <div class="ui icon input">
+                <input id="expression" type="text" />
+                </div> <br> <br>
+                <input class="ui button" id="perform" type="submit" value="Perform" />
+                <button class="ui button" id="help"> ? </button>
             </form>
-            <p>--------------------------</p>
             <p id="answer"> </p>
-            <canvas id="answerchart"> </canvas>
+            <br> <br>
         </div>
+        <div class="ui divider"></div>
+        <div class="ui blue message">
         <p id="credits"> Created by Kevin Faust (FurryFaust) 2015 </p>
+        </div>
     </body>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="script.js"></script>

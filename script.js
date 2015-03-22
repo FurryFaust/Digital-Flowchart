@@ -54,7 +54,7 @@ $(document).ready(function() {
     });
 
     $("#help").click(function(event) {
-        window.open("https://github.com/FurryFaust/Digital-Flowchart");
+        window.open("https://github.com/FurryFaust/Digital-Waveform");
         event.preventDefault();
     });
 

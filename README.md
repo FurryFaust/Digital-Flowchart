@@ -20,22 +20,29 @@ Later we can compare these two charts using boolean algebra.
 Boolean Algebra / Chart Comparator
 ----------------------------------
 A + B (OR Gate)
+
 ![alt tag](http://furryfaust.com/images/Or%20Gate.png)
 
 AB (AND Gate)
+
 ![alt tag](http://furryfaust.com/images/And%20Gate.png)
 
 A' (NOT/Inverter Gate)
+
 ![alt tag](http://furryfaust.com/images/Not%20Gate.png)
 
 (AB)' (NAND Gate)
+
 ![alt tag](http://furryfaust.com/images/Nand%20Gate.png)
 
 (A + B)' (NOR Gate)
+
 ![alt tag](http://furryfaust.com/images/Nor%20Gate.png)
 
 A ^ B (XOR GATE)
+
 ![alt tag](http://furryfaust.com/images/XOr%20Gate.png)
 
 (A ^ B)' (XNOR GATE)
+
 ![alt tag](http://furryfaust.com/images/XNOr%20Gate.png)

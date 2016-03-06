@@ -1,0 +1,61 @@
+* {
+    margin: 0; 
+    padding: 0px;
+}
+
+input {
+    padding: 2px;
+}
+
+button {
+}
+
+.waveform {
+    display: flex;
+
+    position: relative;
+    margin: 5px;
+    height: 32px;
+}
+
+.waveform > .piece {
+    width: 32px;
+    height: 32px;
+}
+
+.waveform > .piece.left {
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.waveform > .piece.middle {
+    border-top: 1px solid black;
+}
+
+.waveform > .piece.right {
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.waveform > .piece.low {
+    border-bottom: 1px solid black;
+}
+
+.waveform > .piece.high {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+body {
+    display: flex;
+
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+body > div {
+    flex: 1;
+}
+
+

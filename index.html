@@ -1,17 +1,19 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link href="assets/css/main.css" rel="stylesheet" />
         <script src="assets/js/script.js" async></script>
     </head>
 
     <body>
         <div>
-            <p>Inputs</p>
+            <p class="title">Inputs</p>
             <div class="inputs">
                 <div class="set">
                     <div class="input">
-                        <input onkeydown="restrict(event, isAlpha)" placeholder="id" type="text" size="1" maxlength="1" />
-                        <input onkeydown="restrict(event, isBin)" placeholder="sequence" type="text" />
+                        <input onkeydown="restrict(event, isAlpha)" placeholder="id" type="text" size="2" maxlength="1" />
+                        <input onkeydown="restrict(event, isBin)" placeholder="sequence" type="text" size="8" maxlength="8" />
                     </div>
                     <div class="waveform"></div>
                 </div>
@@ -20,14 +22,16 @@
             <button id="gen">generate</button>
         </div>
         <div>
-            <p>Evaluator</p>
-            <div class="mixer">
+            <p class="title">Evaluator</p>
+            <div class="expression">
                 <div class="set">
-                    <input type="text" />
+                    <div class="input">
+                        <input type="text" size="10" placeholder="expression" />
+                    </div>
                     <div class="waveform"></div>
                 </div>
             </div>
-            <button id="more_m">+</button>
+            <button id="more_e">+</button>
             <button id="eval">evaluate</button>
         </div>
     </body>

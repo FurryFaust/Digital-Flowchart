@@ -16,7 +16,7 @@ window.onload = function() {
                 ids.push(id);
                 sequences.push(val);
             } else {
-                if (ids.indexOf(id) != -1) {
+                if (id != "" && ids.indexOf(id) != -1) {
                     input.children[1].value = "Duplicate ID";
                 }
                 ids.push("");
@@ -27,10 +27,7 @@ window.onload = function() {
         var waveforms = document.querySelectorAll(".inputs > .set > .waveform");
         for (var i = 0; i != ids.length; i++) {
             var sequence = sequences[i];
-            if (sequence == "") {
-                continue;
-            }
-            
+
             draw(waveforms[i], sequence);
         }
 
@@ -46,8 +43,8 @@ window.onload = function() {
 
         var id = document.createElement("input");
         id.type        = "text";
-        id.size        = "1";
-        id.maxlength   = "1";
+        id.size        = "2";
+        id.maxLength   = "1";
         id.placeholder = "id";
         id.onkeydown   = function(event) { 
             restrict(event, isAlpha);
@@ -55,6 +52,8 @@ window.onload = function() {
 
         var seq = document.createElement("input");
         seq.type        = "text";
+        seq.size        = "8";
+        seq.maxLength   = "8";
         seq.placeholder = "sequence";
         seq.onkeydown   = function(event) { 
             restrict(event, isBin);
@@ -121,6 +120,9 @@ function draw(el, sequence) {
     }
 }
 
+function size(text) {
+}
+
 function create_piece(piece) {
     var div = document.createElement("div");
     div.className = "piece " + piece;
@@ -131,7 +133,7 @@ function evaluate(expr) {
 }
 
 function restrict(event, limit) {
-    if (!limit(event.keyCode) && "9 8 46".indexOf(event.keyCode) == -1) {
+    if (!limit(event.keyCode) && "9 8 46 37 39".indexOf(event.keyCode) == -1) {
         event.preventDefault();
     }
 }

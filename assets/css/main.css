@@ -3,18 +3,32 @@
     padding: 0px;
 }
 
+p {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+p.title {
+    padding: 5px;
+    background-color: black;
+    color: #eee; 
+
+    margin-bottom: 5px;
+    text-align: center;
+}
+
 input {
     padding: 2px;
 }
 
 button {
+    padding: 4px;
 }
 
 .waveform {
     display: flex;
 
     position: relative;
-    margin: 5px;
+    margin: 10px;
     height: 32px;
 }
 
@@ -47,15 +61,62 @@ button {
     border-right: 1px solid black;
 }
 
+.set {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    background-color: #cccccc;
+}
+
+.set > .input {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+
+    padding: 5px 5px 3px 5px;
+    background-color: #3d3d3e;
+
+    text-align: center;
+}
+
+.set > .input > input {
+    font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+    color: white;
+
+    border: unset;
+    background-color: #3D3D3E;
+}
+
+.set > .waveform {
+    justify-content: center;
+
+    padding-bottom: 10px;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+
 body {
     display: flex;
+    flex-direction: row;
 
     padding-bottom: 5px;
     border-bottom: 1px solid black;
 }
 
 body > div {
-    flex: 1;
+   flex: 1;
+
+    margin-bottom: 5px;
 }
 
+.inputs {
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
+@media all and (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+}

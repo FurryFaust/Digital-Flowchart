@@ -14,6 +14,9 @@ window.onload = function() {
 
             if (id != "" && val != "" && ids.indexOf(id) == -1 ) {
                 ids.push(id);
+
+                val = (val + "00000000").substring(0, 8);
+                input.children[1].value = val;
                 sequences.push(val);
             } else {
                 if (id != "" && ids.indexOf(id) != -1) {
@@ -71,6 +74,43 @@ window.onload = function() {
         document.querySelector(".inputs").appendChild(set);
     };
 
+    document.getElementById("eval").onclick = function() {
+        var expressions = document.querySelectorAll(".expressions > .set > .input");
+        var waveforms = document.querySelectorAll(".expressions > .set > .waveform");
+
+        for (var i = 0; i != expressions.length; i++) {
+            var seq = evaluate(expressions[i].children[0].value);
+
+            draw(waveforms[i], seq);
+        }
+
+    };
+
+    document.getElementById("more_e").onclick = function() {
+        var set = document.createElement("div");
+        set.className = "set";
+
+        var input = document.createElement("div");
+        input.className = "input";
+
+        var expr = document.createElement("input");
+        expr.type        = "text";
+        expr.size        = "10"; 
+        expr.placeholder = "expression";
+        expr.onfocus     = function() { enter(this); };
+        expr.onblur      = function() { exit(this); };
+
+        input.appendChild(expr);
+
+        var waveform = document.createElement("div");
+        waveform.className = "waveform";
+
+        set.appendChild(input);
+        set.appendChild(waveform);
+
+        document.querySelector(".expressions").appendChild(set);
+    };
+
 };
 
 function draw(el, sequence) {
@@ -120,7 +160,16 @@ function draw(el, sequence) {
     }
 }
 
-function size(text) {
+function enter(el) {
+    el.size = (parseInt(el.size) + 2).toString();
+}
+
+function exit(el) {
+    if (el.value.length != 0 && el.value.length >= 10) {
+        el.size = el.value.length;
+    } else {
+        el.size = "10";
+    }
 }
 
 function create_piece(piece) {
@@ -129,7 +178,61 @@ function create_piece(piece) {
     return div;
 }
 
+String.prototype.containsAny = function(search) {
+    if (search instanceof Array) {
+        for (var i = 0; i != search.length; i++) {
+            if (this.toString().indexOf(search[i]) != -1) {
+                return true;
+            }
+        }
+    } else if (typeof search == "string") {
+        return this.toString().indexOf(search) != -1;
+    }
+
+    return false;
+}
+
+var operators = ["1'", "0'", "11", "00", "10", "01", "(0)", "(1)", "1^1", "0^1", "1^0", "0^0", "1+1", "0+0", "1+0", "0+1"];
+var to        = ["0", "1", "1", "0", "0", "0", "0", "1", "0", "1","1", "0", "1", "0", "1", "1"];
+
 function evaluate(expr) {
+    var build = "";
+    expr = expr.split(" ").join("");
+    console.log("Working now with" + expr);
+
+    for (var i = 0; i != 8; i++) {
+        var val = expr;
+        for (var j = 0; j != ids.length; j++) {
+            while (val.containsAny(ids[j])) {
+                val = val.replace(ids[j], sequences[j].charAt(i));
+            }
+        }
+        console.log("After ID Switch" + val);
+
+        while (val.containsAny(operators)) {
+            for (var k = 0; k != operators.length; k++) {
+                if (val.containsAny(operators[k])) {
+                    console.log("Replaced " + operators[k] + " to " + to[k]);
+                    val = val.replace(operators[k], to[k]);
+
+                    break;
+                }
+            }
+        }
+
+        build += val;
+    }
+    console.log(build);
+
+    return build;
+}
+
+function replace(str, pattern, rep) {
+    while (pattern.indexOf(rep) != -1) {
+        str.replace(pattern, rep);
+    }
+
+    return str;
 }
 
 function restrict(event, limit) {

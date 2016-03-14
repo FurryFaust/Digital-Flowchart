@@ -109,7 +109,7 @@ body {
 }
 
 body > div {
-   flex: 1;
+    flex: 1;
 
     margin-bottom: 5px;
 }

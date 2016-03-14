@@ -34,7 +34,6 @@ window.onload = function() {
             draw(waveforms[i], sequence);
         }
 
-        console.log(sequences);
     };
 
     document.getElementById("more_i").onclick = function() {
@@ -198,7 +197,6 @@ var to        = ["0", "1", "1", "0", "0", "0", "0", "1", "0", "1","1", "0", "1",
 function evaluate(expr) {
     var build = "";
     expr = expr.split(" ").join("");
-    console.log("Working now with" + expr);
 
     for (var i = 0; i != 8; i++) {
         var val = expr;
@@ -207,7 +205,6 @@ function evaluate(expr) {
                 val = val.replace(ids[j], sequences[j].charAt(i));
             }
         }
-        console.log("After ID Switch" + val);
 
         while (val.containsAny(operators)) {
             for (var k = 0; k != operators.length; k++) {
@@ -222,7 +219,6 @@ function evaluate(expr) {
 
         build += val;
     }
-    console.log(build);
 
     return build;
 }
